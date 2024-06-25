@@ -4,10 +4,10 @@ Este proyecto implementa un sistema de clasificación de colores utilizando los 
 
 ## Estructura del Proyecto
 
-Classification
-     knn.py
-     svm.py
-     svm1.py
+### Classification
+knn.py
+svm.py
+svm1.py
 Data
 Colors
 amarillo
