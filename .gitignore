@@ -164,6 +164,5 @@ cython_debug/
 
 # Yolo
 yolov3.weights
-yolov3-tiny.weights
 coco.names
 yolov3.cfg

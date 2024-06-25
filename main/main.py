@@ -9,7 +9,7 @@ logging.basicConfig(filename='detections.log',
                     level=logging.INFO, format='%(asctime)s - %(message)s')
 
 # Cargar el modelo KNN entrenado
-model_path = './Models/svm_model.joblib'
+model_path = './Models/svm_model_INTER_LANCZOS4.joblib'
 knn_model = load(model_path)
 
 # Cargar YOLO
@@ -34,7 +34,7 @@ if not os.path.exists('detected_parts'):
 def procesar_y_predecir(imagen, nombre_archivo):
     if imagen.size != 0:
         cv2.imwrite(nombre_archivo, imagen)
-        imagen_resized = cv2.resize(imagen, (50, 50))
+        imagen_resized = cv2.resize(imagen, (50, 50), interpolation=cv2.INTER_LANCZOS4)
         imagen_blurred = cv2.medianBlur(imagen_resized, 3)
         imagen_normalized = imagen_blurred / 255.0
         imagen_flattened = imagen_normalized.flatten().reshape(1, -1)
@@ -91,8 +91,8 @@ while True:
             piernas = frame[piernas_y1:piernas_y2, x:x+w]
 
             # Guardar las imágenes del torso y las piernas
-            torso_file = f'detected_parts6/torso_{i}.png'
-            piernas_file = f'detected_parts6/piernas_{i}.png'
+            torso_file = f'detected_parts/torso_{i}.png'
+            piernas_file = f'detected_parts/piernas_{i}.png'
 
             # Clasificación del color del torso
             color_torso = procesar_y_predecir(torso, torso_file)

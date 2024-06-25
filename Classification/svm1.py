@@ -30,7 +30,6 @@ for carpeta in os.listdir(ruta_carpeta):
         imagen = cv2.imread(ruta_imagen, cv2.IMREAD_COLOR)
 
         # Cambiar tamaño de la imagen y aplicar filtro de mediana
-        #imagen = cv2.resize(imagen, (50, 50), interpolation=cv2.INTER_LINEAR)
         imagen = cv2.resize(imagen, (50, 50), interpolation=cv2.INTER_LANCZOS4)
 
         # Aplicar filtro de mediana
@@ -58,7 +57,15 @@ svm.fit(X_train, y_train)
 # Predecir y evaluar el modelo
 y_pred = svm.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
-print(f'Exactitud del modelo Svm: {accuracy}')
+print(f'Exactitud del modelo SVM: {accuracy}')
+
+# Obtener los índices de los vectores de soporte
+vectores_de_soporte_indices = svm.support_
+
+# Contar el número de vectores de soporte
+num_vectores_de_soporte = len(vectores_de_soporte_indices)
+
+print(f'Número de vectores de soporte: {num_vectores_de_soporte}')
 
 # Guardar el modelo si es necesario
 dump(svm, './Models/svm_model_INTER_LANCZOS4.joblib')
