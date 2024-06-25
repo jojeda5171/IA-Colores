@@ -4,27 +4,29 @@ Este proyecto implementa un sistema de clasificación de colores utilizando los 
 
 ## Estructura del Proyecto
 
-### Classification
-knn.py
-svm.py
-svm1.py
+```bash
+Classification
+   knn.py
+   svm.py
+   svm1.py
 Data
-Colors
-amarillo
-azul
-blanco
-naranja
-negro
-rojo
-verde
+   Colors
+      amarillo
+      azul
+      blanco
+      naranja
+      negro
+      rojo
+      verde
 Models
-svm_model.zip
-svm_model_INTER_LANCZOS4.zip
+      svm_model.zip
+      svm_model_INTER_LANCZOS4.zip
 Yolo
-coco.names
-yolov3.cfg
+   coco.names
+   yolov3.cfg
 main
-main.py
+   main.py
+```
 
 
 ## Descripción de los Archivos
