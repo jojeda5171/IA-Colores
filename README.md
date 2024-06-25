@@ -103,6 +103,6 @@ Los modelos entrenados se guardan en la carpeta ./Models/. Asegúrate de que est
 El script main.py guarda las detecciones y las clasificaciones de color en un archivo de log llamado detections.log.
 
 ## Créditos
-Proyecto desarrollado por José Ojeda & Sebastián Palate.
+Proyecto desarrollado por [José Ojeda](https://github.com/jojeda5171) & [Sebastián Palate](https://github.com/sebasPalate).
 
 Este archivo README proporciona una guía completa sobre cómo utilizar y entender tu proyecto, facilitando a otros usuarios la ejecución y comprensión del mismo.
